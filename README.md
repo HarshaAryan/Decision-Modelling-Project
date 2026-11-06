@@ -88,9 +88,13 @@ The project requires finding and visualizing **non-dominated (Pareto-optimal) so
 │   ├── toy_instance.json
 │   ├── medium_instance.json
 │   └── large_instance.json
-├── PROJECT_SPECIFICATIONS.md
-├── README.md
-├── plan.md
+├── Guide_Installation_de_Gurobi.pdf    # Official CentraleSupélec Gurobi setup guide
+├── TP0-Corrigé.ipynb                  # Course lab tutorial on Gurobi modeling (3 methods)
+├── gurobi.ipynb                       # Quick reference workbook for gurobipy
+├── Projet_MScAI_2026_27-3.pdf         # Official project assignment statement
+├── PROJECT_SPECIFICATIONS.md          # Full mathematical model & parameter dictionary
+├── README.md                          # Project documentation & solver guide
+├── plan.md                            # 3-day, 3-person implementation roadmap
 └── src/ (to be created)
     ├── data_loader.py
     ├── instance_generator.py
@@ -108,15 +112,26 @@ Each JSON file contains:
 
 ---
 
-## 5. Supported Solvers & Frameworks
+## 5. Supported Solvers & Course Tutorial References
 
 | Tool | Focus | Documentation / Links |
 | :--- | :--- | :--- |
-| **Gurobi** | State-of-the-art commercial MILP solver | [gurobi.com](https://www.gurobi.com/) |
+| **Gurobi** | State-of-the-art commercial MILP solver | [gurobi.com](https://www.gurobi.com/)<br>• Setup guide: [Guide_Installation_de_Gurobi.pdf](Guide_Installation_de_Gurobi.pdf)<br>• Course Lab Tutorial: [TP0-Corrigé.ipynb](TP0-Corrigé.ipynb)<br>• Reference notebook: [gurobi.ipynb](gurobi.ipynb) |
 | **IBM CPLEX / OPL** | High-performance industrial MILP & CP solver | [cplex-optimizer](https://www.ibm.com/fr-fr/analytics/cplex-optimizer) |
 | **Google OR-Tools** | Versatile open-source LP, MIP & CP-SAT solver | [developers.google.com/optimization](https://developers.google.com/optimization?hl=en) |
 | **Pyomo** | Solver-agnostic Python algebraic modeling interface | [pyomo.org](http://www.pyomo.org/) |
 | **COIN-OR / PuLP** | Open-source operations research libraries | [coin-or.org](http://www.coin-or.org/) |
+
+---
+
+## 6. Gurobi Best Practices Learned from TP0
+
+From [TP0-Corrigé.ipynb](TP0-Corrigé.ipynb) and [gurobi.ipynb](gurobi.ipynb):
+- **Model Instantiation:** Use `m = Model("CompuOpti_Staffing")`.
+- **Variable Declaration:** For multi-dimensional sparse variables like $X_{i,j,k,t}$, declare with `m.addVars(...)` using `vtype=GRB.BINARY`, or build a dictionary of allowed tuples $(i, j, k, t)$ to avoid memory overhead.
+- **Constraints & Sums:** Use `quicksum(...)` instead of Python `sum(...)` for efficient Gurobi expression compilation.
+- **Model Inspection:** Export with `m.write("model.lp")` to visually verify constraints and bounds on small instances.
+- **Solver Status Checks:** Always inspect `m.status == GRB.OPTIMAL` before accessing `.x` and `.objVal`. Mute verbose logs during benchmark loops with `m.setParam("OutputFlag", 0)`.
 
 ---
 

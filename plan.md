@@ -1,7 +1,7 @@
 # Project Execution Plan: Staffing Collaborators on Projects
 
-**Target Timeline:** 3 Days  
-**Team Composition:** 3 Team Members  
+**Target Timeline:** 3 Days
+**Team Composition:** 3 Team Members
 **Goal:** Deliver an exact and heuristic optimization engine, an instance generator, multi-objective Pareto front exploration, rich visualizations (decision space & objective space), and defense slides.
 
 ---
@@ -10,14 +10,14 @@
 
 Before and during Day 1, each member should familiarize themselves with these specific tools:
 
-| Category | Tools | Purpose | Who Needs It |
-| :--- | :--- | :--- | :--- |
-| **Exact Solvers** | `gurobipy` or `ortools.linear_solver` / `ortools.sat` | Formulate and solve the MILP / CP-SAT models | Person 1, Person 3 |
-| **Heuristics / Search** | Python (`numpy`, `random`, `scipy`) | Greedy constructive heuristic, Simulated Annealing or Genetic Algorithm | Person 2 |
-| **Data & Architecture** | `json`, `dataclasses` / `pydantic` | Clean data parsing, validation, and instance generation | Person 2 |
-| **Multi-Objective** | $\epsilon$-constraint method, Weighted-sum | Generating non-dominated Pareto sets | Person 1, Person 3 |
-| **Visualization** | `matplotlib`, `seaborn`, `plotly` | Plotting Pareto fronts and interactive Gantt charts (decision space) | Person 3 |
-| **Version Control** | `git`, GitHub | Collaborative branch management, clean PRs, commit history | All 3 Members |
+| Category                      | Tools                                                       | Purpose                                                                 | Who Needs It       |
+| :---------------------------- | :---------------------------------------------------------- | :---------------------------------------------------------------------- | :----------------- |
+| **Exact Solvers**       | `gurobipy` or `ortools.linear_solver` / `ortools.sat` | Formulate and solve the MILP / CP-SAT models                            | Person 1, Person 3 |
+| **Heuristics / Search** | Python (`numpy`, `random`, `scipy`)                   | Greedy constructive heuristic, Simulated Annealing or Genetic Algorithm | Person 2           |
+| **Data & Architecture** | `json`, `dataclasses` / `pydantic`                    | Clean data parsing, validation, and instance generation                 | Person 2           |
+| **Multi-Objective**     | $\epsilon$-constraint method, Weighted-sum                | Generating non-dominated Pareto sets                                    | Person 1, Person 3 |
+| **Visualization**       | `matplotlib`, `seaborn`, `plotly`                     | Plotting Pareto fronts and interactive Gantt charts (decision space)    | Person 3           |
+| **Version Control**     | `git`, GitHub                                             | Collaborative branch management, clean PRs, commit history              | All 3 Members      |
 
 ---
 
@@ -30,10 +30,15 @@ Keep these technical and mathematical considerations in mind throughout developm
    - **Do not create $X_{i,j,k,t}$** for tuples where $k \notin \mathcal{Q}_i^S$ or $k \notin \mathcal{Q}_j^J$, or where $t \in \mathcal{V}_i^S$. Filter them out during variable creation.
 2. **Handling Uncompleted Projects ($Y_j = 0$) in Delay Penalties:**
    - In the slide formulation:
-     $$X_{i,j,k,t} \times t \le E_j \quad \text{and} \quad E_j - d_j \le L_j$$
+     $$
+     X_{i,j,k,t} \times t \le E_j \quad \text{and} \quad E_j - d_j \le L_j
+     $$
    - If a project is *not* completed ($Y_j = 0$), ensure that $L_j$ does not incur penalty $c_j$ if some days were worked or if $E_j$ is default-initialized.
    - Ensure either:
-     $$E_j \le h \cdot Y_j \quad \text{and} \quad L_j \le h \cdot Y_j$$
+     $$
+     E_j \le h \cdot Y_j \quad \text{and} \quad L_j \le h \cdot Y_j
+     $$
+
      or linking $L_j \ge E_j - d_j - h \cdot (1 - Y_j)$ and $L_j \ge 0$.
 3. **Multi-Objective Method Choice:**
    - Simple weighted-sum cannot find non-dominated points in non-convex regions of the Pareto front.
@@ -63,7 +68,7 @@ gantt
     title 3-Day Project Execution Schedule
     dateFormat  YYYY-MM-DD
     axisFormat  Day %d
-    
+  
     section Person 1 (Exact Solver)
     Baseline MILP Model (toy/medium)  :p1_1, 2026-11-01, 1d
     Exact Solver Tuning & Epsilon-Constraint :p1_2, 2026-11-02, 1d
@@ -85,11 +90,17 @@ gantt
 ### Day 1: Foundations, Baseline Model & Data Pipeline
 
 #### Morning (Sync & Setup - 1.5h together)
+
 - Initialize Git repository and project directory structure.
+- **License & Solver Setup:** Follow [Guide_Installation_de_Gurobi.pdf](Guide_Installation_de_Gurobi.pdf) to activate academic Gurobi license via `@student-cs.fr` account and install `gurobipy`.
+- **Review Course Lab:** Review [TP0-Corrigé.ipynb](TP0-Corrigé.ipynb) and [gurobi.ipynb](gurobi.ipynb) to align on modeling syntax:
+  - Using `Model("CompuOpti")`, `m.addVar(vtype=GRB.BINARY)` / `m.addVars(...)`, and `quicksum(...)`.
+  - Checking status codes (`GRB.OPTIMAL`, `GRB.INFEASIBLE`) and managing `OutputFlag`.
 - Agree on JSON data structures, solution format, and coding standards.
 - Set up Python virtual environment (`gurobipy`, `ortools`, `matplotlib`, `plotly`, `pandas`).
 
 #### Afternoon (Individual Core Tasks)
+
 - **Person 1 (Exact Model):**
   - Implement `exact_solver.py` with Gurobi or OR-Tools CP-SAT.
   - Implement all 7 constraints from [PROJECT_SPECIFICATIONS.md](PROJECT_SPECIFICATIONS.md).
@@ -106,6 +117,7 @@ gantt
     - $f_4$: Number of delayed projects $\sum_j \mathbb{I}(L_j > 0)$.
 
 #### Evening Checkpoint (End of Day 1)
+
 - Solution from Person 1 for `toy_instance.json` passes Person 2's validator.
 - Person 3 renders the first Gantt chart of the toy solution.
 
@@ -114,6 +126,7 @@ gantt
 ### Day 2: Heuristics, Multi-Objective Front & Large Instances
 
 #### Morning
+
 - **Person 1:**
   - Run exact solver on `medium_instance.json`. Benchmark runtime.
   - Implement $\epsilon$-constraint method to produce multi-objective Pareto front between Profit and Makespan.
@@ -126,6 +139,7 @@ gantt
   - Add interactive tooltips (showing which projects were completed at each Pareto point).
 
 #### Afternoon
+
 - **Person 1:**
   - Tune MILP solver parameters (time limits, MIPGap, warm-start from Person 2's heuristic).
   - Test if exact solver can find feasible solutions for `large_instance.json` within a 5-minute timeout.
@@ -137,6 +151,7 @@ gantt
   - Generate decision-space comparison views (Gantt charts comparing profit-maximizing vs makespan-minimizing schedules).
 
 #### Evening Checkpoint (End of Day 2)
+
 - Pareto front generated for toy and medium instances.
 - Heuristic delivers valid solutions on `large_instance.json` in under 10 seconds.
 - Multi-objective visualizer operational.
@@ -146,6 +161,7 @@ gantt
 ### Day 3: Benchmarking, Synthesis, Slides & Defense Preparation
 
 #### Morning
+
 - **Person 1:**
   - Run comprehensive computational experiments across all instances (toy, medium, large, generated).
   - Record execution time, optimality gaps, number of variables, and constraints.
@@ -158,6 +174,7 @@ gantt
   - Draft the presentation slide deck (introduction, mathematical model, solver architecture, experimental results, and conclusion).
 
 #### Afternoon
+
 - **All Team Members (Co-working):**
   - Consolidate slides:
     - Slide 1: Title, Team, Context (CompuOpti & Margaux Dourtille).
@@ -175,8 +192,8 @@ gantt
 
 ## 5. Daily Checklist & Deliverables Matrix
 
-| Day | Person 1 Deliverable | Person 2 Deliverable | Person 3 Deliverable |
-| :--- | :--- | :--- | :--- |
-| **Day 1** | Working exact MILP solver for `toy_instance.json` | Data loader, solution validator, and initial instance generator | Gantt chart generator & multi-objective criteria spec |
-| **Day 2** | $\epsilon$-constraint Pareto solver & medium instance runs | Fast heuristic / metaheuristic for large instances | Pareto front visualizer & comparative objective plots |
-| **Day 3** | Benchmark tables (exact gap/runtime) | Scalability analysis & final generator stress tests | Final slide deck & decision/objective space visualizations |
+| Day             | Person 1 Deliverable                                         | Person 2 Deliverable                                            | Person 3 Deliverable                                       |
+| :-------------- | :----------------------------------------------------------- | :-------------------------------------------------------------- | :--------------------------------------------------------- |
+| **Day 1** | Working exact MILP solver for `toy_instance.json`          | Data loader, solution validator, and initial instance generator | Gantt chart generator & multi-objective criteria spec      |
+| **Day 2** | $\epsilon$-constraint Pareto solver & medium instance runs | Fast heuristic / metaheuristic for large instances              | Pareto front visualizer & comparative objective plots      |
+| **Day 3** | Benchmark tables (exact gap/runtime)                         | Scalability analysis & final generator stress tests             | Final slide deck & decision/objective space visualizations |
