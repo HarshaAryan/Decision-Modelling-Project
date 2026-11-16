@@ -155,7 +155,8 @@ if gen.exists():
         I, ex, he = d["instance"], d.get("exact", {}), d["heuristic"]
         rows.append([I["instance"].replace("gen_", ""), I["n_staff"], I["n_jobs"], I["horizon"],
                      I["n_x_variables"], d["best_profit"]["profit"], ex.get("n_points", "-"),
-                     ex.get("total_time_s", "-"), "yes" if ex.get("exact") else "no",
+                     ex.get("total_time_s", "-"),
+                     ("yes" if ex.get("exact") else "no") if ex else "heuristic only",
                      he["n_points"], he["total_time_s"], d.get("coverage_exact_over_heur", "-")])
 s = slide("Results on provided and generated instances")
 table(s, rows, 0.4, 1.5, 12.5, size=11)
@@ -174,8 +175,10 @@ for name in ["toy", "medium", "large"]:
                 f"{d.get('exact', d['heuristic'])['n_points']} non-dominated points · "
                 f"interactive version: results/{name}/pareto.html"], y=5.7, h=1, size=15)
     s = slide(f"{name.capitalize()} instance – decision space (schedules)")
-    image(s, RES / name / "gantt_max_profit.png", 0.3, 1.35, h=2.9)
-    image(s, RES / name / "gantt_compromise.png", 0.3, 4.3, h=2.9)
+    image(s, RES / name / "gantt_max_profit.png", 1.9, 1.35, h=2.9)
+    image(s, RES / name / "gantt_compromise.png", 1.9, 4.3, h=2.9)
+    bullets(s, ["Max-profit plan"], x=0.3, y=2.5, w=1.6, h=0.8, size=15)
+    bullets(s, ["Compromise plan (closest to ideal point)"], x=0.3, y=5.4, w=1.6, h=1.2, size=15)
 
 # 10 Insights --------------------------------------------------------------
 s = slide("Insights and recommendations for Margaux Dourtille")
