@@ -95,12 +95,21 @@ The project requires finding and visualizing **non-dominated (Pareto-optimal) so
 ├── PROJECT_SPECIFICATIONS.md          # Full mathematical model & parameter dictionary
 ├── README.md                          # Project documentation & solver guide
 ├── plan.md                            # 3-day, 3-person implementation roadmap
-└── src/ (to be created)
-    ├── data_loader.py
-    ├── instance_generator.py
-    ├── exact_solver.py
-    ├── heuristic_solver.py
-    └── visualization.py
+├── src/
+│   ├── data_loader.py          # JSON -> Instance (sparse eligible X tuples)
+│   ├── solution.py             # independent evaluation, validator, Pareto filter
+│   ├── exact_solver.py         # MILP (CP-SAT / Gurobi) + epsilon-constraint front
+│   ├── heuristic_solver.py     # randomised greedy + Pareto archive
+│   ├── instance_generator.py   # random instances with controlled load
+│   ├── visualization.py        # Pareto front (objective space) + Gantt (decision space)
+│   └── run_experiments.py      # runs everything, writes results/
+├── tests/test_models.py        # pytest sanity checks
+├── Datasets-generated/         # instances produced by the generator
+├── results/<instance>/         # fronts (json), pareto.png/.html, gantt_*.png, summary.json
+└── docs/
+    ├── REPORT.md               # full model, method and results
+    ├── make_slides.py          # rebuilds the defense deck from results/
+    └── CompuOpti_defense.pptx  # defense slides
 ```
 
 ### JSON Schema
@@ -142,7 +151,16 @@ Recommended environment: Python 3.10+ with:
 pip install gurobipy ortools pyomo matplotlib seaborn pandas numpy
 ```
 
-Run test instance verification:
 ```bash
-python3 -c "import json; data=json.load(open('Datasets-20261106/toy_instance.json')); print('Loaded horizon:', data['horizon'])"
+pip install -r requirements.txt
+python -m pytest tests -q                                            # sanity checks
+cd src
+python exact_solver.py ../Datasets-20261106/toy_instance.json        # single-objective max profit (toy optimum = 65)
+python run_experiments.py --instances toy medium --time-limit 90     # exact epsilon-constraint + heuristic fronts
+python run_experiments.py --instances large --time-limit 30          # large: time-limited sub-problems
+python run_experiments.py --generated --time-limit 20                # instance-generator benchmark
+python instance_generator.py --staff 6 --jobs 20 --horizon 30 --load 1.4 --seed 1 --out ../Datasets-generated/my.json
+cd .. && python docs/make_slides.py                                  # rebuild the slide deck
 ```
+
+CP-SAT (OR-Tools) is the default back-end. Gurobi gives the same results (`solve(..., backend="gurobi")`), but the free pip licence only covers the toy instance. The objectives used for the Pareto front are $f_1$ profit (max), $f_2$ max number of projects per collaborator (min) and $f_3$ longest project duration (min). See [docs/REPORT.md](docs/REPORT.md) for the model, the method and the results.

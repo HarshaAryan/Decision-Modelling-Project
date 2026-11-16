@@ -1,0 +1,2 @@
+=== gen_s8_j30_h30: {'instance': 'gen_s8_j30_h30', 'horizon': 30, 'n_qualifications': 10, 'n_staff': 8, 'n_jobs': 30, 'total_gain': 1030, 'total_demand_person_days': 310, 'total_capacity_person_days': 216, 'n_x_variables': 4060}
+heuristic: {'n_points': 66, 'n_greedy_runs': 3600, 'total_time_s': 100.04, 'exact': False, 'backend': 'heuristic'}

@@ -1,0 +1,20 @@
+=== toy_instance: {'instance': 'toy_instance', 'horizon': 5, 'n_qualifications': 3, 'n_staff': 3, 'n_jobs': 5, 'total_gain': 80, 'total_demand_person_days': 14, 'total_capacity_person_days': 13, 'n_x_variables': 90}
+heuristic: {'n_points': 9, 'n_greedy_runs': 250, 'total_time_s': 0.05, 'exact': False, 'backend': 'heuristic'}
+  eps2= 5 eps3= 5 -> profit=  65 F2=2 F3=3  [optimal, 0.075s]
+  eps2= 5 eps3= 2 -> profit=  65 F2=3 F3=2  [optimal, 0.058s]
+  eps2= 5 eps3= 1 -> profit=  59 F2=4 F3=1  [optimal, 0.043s]
+  eps2= 5 eps3= 0 -> profit=   0 F2=0 F3=0  [optimal, 0.025s]
+  eps2= 3 eps3= 5 -> profit=  65 F2=2 F3=3  [optimal, 0.076s]
+  eps2= 3 eps3= 2 -> profit=  65 F2=3 F3=2  [optimal, 0.074s]
+  eps2= 3 eps3= 1 -> profit=  49 F2=3 F3=1  [optimal, 0.039s]
+  eps2= 3 eps3= 0 -> profit=   0 F2=0 F3=0  [optimal, 0.026s]
+  eps2= 2 eps3= 5 -> profit=  65 F2=2 F3=3  [optimal, 0.074s]
+  eps2= 2 eps3= 2 -> profit=  55 F2=2 F3=2  [optimal, 0.059s]
+  eps2= 2 eps3= 1 -> profit=  37 F2=2 F3=1  [optimal, 0.04s]
+  eps2= 2 eps3= 0 -> profit=   0 F2=0 F3=0  [optimal, 0.025s]
+  eps2= 1 eps3= 5 -> profit=  42 F2=1 F3=3  [optimal, 0.06s]
+  eps2= 1 eps3= 2 -> profit=  30 F2=1 F3=2  [optimal, 0.075s]
+  eps2= 1 eps3= 1 -> profit=  20 F2=1 F3=1  [optimal, 0.04s]
+  eps2= 1 eps3= 0 -> profit=   0 F2=0 F3=0  [optimal, 0.026s]
+  eps2= 0 eps3= 5 -> profit=   0 F2=0 F3=0  [optimal, 0.024s]
+exact: {'n_solves': 17, 'n_points': 10, 'total_time_s': 1.42, 'exact': True, 'backend': 'cpsat'}

@@ -1,0 +1,887 @@
+[
+ {
+  "assignments": [
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 1
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 2
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 3
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 4
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 5
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 6
+   },
+   {
+    "staff": "Liam",
+    "job": "Job5",
+    "qualification": "B",
+    "day": 2
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 3
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 4
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 5
+   },
+   {
+    "staff": "Liam",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 6
+   },
+   {
+    "staff": "Liam",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 7
+   },
+   {
+    "staff": "Liam",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 8
+   },
+   {
+    "staff": "Emma",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 1
+   },
+   {
+    "staff": "Emma",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 2
+   },
+   {
+    "staff": "Emma",
+    "job": "Job6",
+    "qualification": "C",
+    "day": 3
+   },
+   {
+    "staff": "Emma",
+    "job": "Job6",
+    "qualification": "C",
+    "day": 4
+   },
+   {
+    "staff": "Emma",
+    "job": "Job6",
+    "qualification": "C",
+    "day": 6
+   },
+   {
+    "staff": "Emma",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 7
+   },
+   {
+    "staff": "Emma",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 8
+   }
+  ],
+  "objectives": {
+   "profit": 92,
+   "max_projects_per_staff": 3,
+   "max_duration": 4,
+   "n_completed": 4,
+   "completed": [
+    "Job2",
+    "Job3",
+    "Job5",
+    "Job6"
+   ],
+   "n_late": 1,
+   "total_tardiness": 1,
+   "makespan": 8
+  },
+  "meta": {
+   "backend": "cpsat",
+   "status": "optimal",
+   "profit_bound": 92,
+   "time_s": 0.19,
+   "eps2": 6,
+   "eps3": 4,
+   "n_vars": 195,
+   "n_constraints": 415
+  }
+ },
+ {
+  "assignments": [
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 1
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 2
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "B",
+    "day": 3
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 4
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 5
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 6
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 8
+   },
+   {
+    "staff": "Liam",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 2
+   },
+   {
+    "staff": "Liam",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 3
+   },
+   {
+    "staff": "Liam",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 4
+   },
+   {
+    "staff": "Liam",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 5
+   },
+   {
+    "staff": "Liam",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 6
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 7
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 8
+   },
+   {
+    "staff": "Emma",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 1
+   },
+   {
+    "staff": "Emma",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 2
+   },
+   {
+    "staff": "Emma",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 3
+   },
+   {
+    "staff": "Emma",
+    "job": "Job6",
+    "qualification": "C",
+    "day": 4
+   },
+   {
+    "staff": "Emma",
+    "job": "Job6",
+    "qualification": "C",
+    "day": 6
+   },
+   {
+    "staff": "Emma",
+    "job": "Job6",
+    "qualification": "C",
+    "day": 7
+   }
+  ],
+  "objectives": {
+   "profit": 92,
+   "max_projects_per_staff": 2,
+   "max_duration": 5,
+   "n_completed": 4,
+   "completed": [
+    "Job2",
+    "Job3",
+    "Job5",
+    "Job6"
+   ],
+   "n_late": 1,
+   "total_tardiness": 1,
+   "makespan": 8
+  },
+  "meta": {
+   "backend": "cpsat",
+   "status": "optimal",
+   "profit_bound": 92,
+   "time_s": 0.236,
+   "eps2": 6,
+   "eps3": 8,
+   "n_vars": 195,
+   "n_constraints": 414
+  }
+ },
+ {
+  "assignments": [
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 1
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 2
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "B",
+    "day": 3
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 4
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 5
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 6
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 3
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 4
+   },
+   {
+    "staff": "Liam",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 5
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 6
+   },
+   {
+    "staff": "Liam",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 7
+   },
+   {
+    "staff": "Emma",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 1
+   },
+   {
+    "staff": "Emma",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 2
+   },
+   {
+    "staff": "Emma",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 3
+   },
+   {
+    "staff": "Emma",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 4
+   },
+   {
+    "staff": "Emma",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 6
+   },
+   {
+    "staff": "Emma",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 7
+   }
+  ],
+  "objectives": {
+   "profit": 85,
+   "max_projects_per_staff": 2,
+   "max_duration": 4,
+   "n_completed": 3,
+   "completed": [
+    "Job2",
+    "Job3",
+    "Job5"
+   ],
+   "n_late": 0,
+   "total_tardiness": 0,
+   "makespan": 7
+  },
+  "meta": {
+   "backend": "cpsat",
+   "status": "optimal",
+   "profit_bound": 85,
+   "time_s": 0.158,
+   "eps2": 2,
+   "eps3": 4,
+   "n_vars": 195,
+   "n_constraints": 415
+  }
+ },
+ {
+  "assignments": [
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 1
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 2
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "B",
+    "day": 3
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 4
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 5
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 6
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 4
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 5
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 6
+   },
+   {
+    "staff": "Liam",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 7
+   },
+   {
+    "staff": "Liam",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 8
+   },
+   {
+    "staff": "Emma",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 1
+   },
+   {
+    "staff": "Emma",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 2
+   },
+   {
+    "staff": "Emma",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 3
+   },
+   {
+    "staff": "Emma",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 6
+   },
+   {
+    "staff": "Emma",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 7
+   },
+   {
+    "staff": "Emma",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 8
+   }
+  ],
+  "objectives": {
+   "profit": 82,
+   "max_projects_per_staff": 2,
+   "max_duration": 3,
+   "n_completed": 3,
+   "completed": [
+    "Job2",
+    "Job3",
+    "Job5"
+   ],
+   "n_late": 1,
+   "total_tardiness": 1,
+   "makespan": 8
+  },
+  "meta": {
+   "backend": "cpsat",
+   "status": "optimal",
+   "profit_bound": 82,
+   "time_s": 0.119,
+   "eps2": 6,
+   "eps3": 3,
+   "n_vars": 195,
+   "n_constraints": 415
+  }
+ },
+ {
+  "assignments": [
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 1
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 2
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 3
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 4
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "B",
+    "day": 5
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 6
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 2
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 3
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 4
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 5
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 6
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 7
+   },
+   {
+    "staff": "Emma",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 2
+   },
+   {
+    "staff": "Emma",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 3
+   },
+   {
+    "staff": "Emma",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 4
+   },
+   {
+    "staff": "Emma",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 6
+   },
+   {
+    "staff": "Emma",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 7
+   }
+  ],
+  "objectives": {
+   "profit": 76,
+   "max_projects_per_staff": 1,
+   "max_duration": 6,
+   "n_completed": 3,
+   "completed": [
+    "Job2",
+    "Job3",
+    "Job5"
+   ],
+   "n_late": 1,
+   "total_tardiness": 3,
+   "makespan": 7
+  },
+  "meta": {
+   "backend": "cpsat",
+   "status": "optimal",
+   "profit_bound": 76,
+   "time_s": 0.135,
+   "eps2": 1,
+   "eps3": 8,
+   "n_vars": 195,
+   "n_constraints": 415
+  }
+ },
+ {
+  "assignments": [
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 1
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 2
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job5",
+    "qualification": "B",
+    "day": 3
+   },
+   {
+    "staff": "Liam",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 3
+   },
+   {
+    "staff": "Liam",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 4
+   },
+   {
+    "staff": "Liam",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 5
+   },
+   {
+    "staff": "Liam",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 6
+   },
+   {
+    "staff": "Liam",
+    "job": "Job2",
+    "qualification": "D",
+    "day": 7
+   },
+   {
+    "staff": "Emma",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 1
+   },
+   {
+    "staff": "Emma",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 2
+   },
+   {
+    "staff": "Emma",
+    "job": "Job5",
+    "qualification": "A",
+    "day": 3
+   }
+  ],
+  "objectives": {
+   "profit": 55,
+   "max_projects_per_staff": 1,
+   "max_duration": 5,
+   "n_completed": 2,
+   "completed": [
+    "Job2",
+    "Job5"
+   ],
+   "n_late": 0,
+   "total_tardiness": 0,
+   "makespan": 7
+  },
+  "meta": {
+   "backend": "cpsat",
+   "status": "optimal",
+   "profit_bound": 55,
+   "time_s": 0.226,
+   "eps2": 1,
+   "eps3": 5,
+   "n_vars": 195,
+   "n_constraints": 415
+  }
+ },
+ {
+  "assignments": [
+   {
+    "staff": "Olivia",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 4
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 5
+   },
+   {
+    "staff": "Olivia",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 6
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 4
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 5
+   },
+   {
+    "staff": "Liam",
+    "job": "Job3",
+    "qualification": "B",
+    "day": 6
+   },
+   {
+    "staff": "Emma",
+    "job": "Job6",
+    "qualification": "C",
+    "day": 1
+   },
+   {
+    "staff": "Emma",
+    "job": "Job6",
+    "qualification": "C",
+    "day": 2
+   },
+   {
+    "staff": "Emma",
+    "job": "Job6",
+    "qualification": "C",
+    "day": 3
+   }
+  ],
+  "objectives": {
+   "profit": 40,
+   "max_projects_per_staff": 1,
+   "max_duration": 3,
+   "n_completed": 2,
+   "completed": [
+    "Job3",
+    "Job6"
+   ],
+   "n_late": 0,
+   "total_tardiness": 0,
+   "makespan": 6
+  },
+  "meta": {
+   "backend": "cpsat",
+   "status": "optimal",
+   "profit_bound": 40,
+   "time_s": 0.2,
+   "eps2": 1,
+   "eps3": 4,
+   "n_vars": 195,
+   "n_constraints": 415
+  }
+ },
+ {
+  "assignments": [],
+  "objectives": {
+   "profit": 0,
+   "max_projects_per_staff": 0,
+   "max_duration": 0,
+   "n_completed": 0,
+   "completed": [],
+   "n_late": 0,
+   "total_tardiness": 0,
+   "makespan": 0
+  },
+  "meta": {
+   "backend": "cpsat",
+   "status": "optimal",
+   "profit_bound": 0,
+   "time_s": 0.031,
+   "eps2": 6,
+   "eps3": 2,
+   "n_vars": 195,
+   "n_constraints": 415
+  }
+ }
+]

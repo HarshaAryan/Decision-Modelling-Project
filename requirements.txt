@@ -1,0 +1,8 @@
+ortools>=9.10
+gurobipy>=11.0   # optional: full academic licence needed beyond the toy instance
+numpy
+pandas
+matplotlib
+plotly
+python-pptx      # only to rebuild the slide deck
+pytest

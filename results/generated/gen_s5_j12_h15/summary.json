@@ -1,0 +1,301 @@
+{
+ "instance": {
+  "instance": "gen_s5_j12_h15",
+  "horizon": 15,
+  "n_qualifications": 6,
+  "n_staff": 5,
+  "n_jobs": 12,
+  "total_gain": 360,
+  "total_demand_person_days": 102,
+  "total_capacity_person_days": 67,
+  "n_x_variables": 841
+ },
+ "heuristic": {
+  "n_points": 25,
+  "n_greedy_runs": 720,
+  "total_time_s": 9.46,
+  "exact": false,
+  "backend": "heuristic"
+ },
+ "exact": {
+  "n_solves": 54,
+  "n_points": 39,
+  "total_time_s": 320.07,
+  "exact": false,
+  "backend": "cpsat"
+ },
+ "coverage_exact_over_heur": 1.0,
+ "coverage_heur_over_exact": 0.077,
+ "best_profit": {
+  "profit": 229,
+  "max_projects_per_staff": 4,
+  "max_duration": 11,
+  "n_completed": 8,
+  "completed": [
+   "Job2",
+   "Job3",
+   "Job4",
+   "Job5",
+   "Job7",
+   "Job8",
+   "Job9",
+   "Job12"
+  ],
+  "n_late": 2,
+  "total_tardiness": 2,
+  "makespan": 15
+ },
+ "front_table": [
+  [
+   229,
+   4,
+   11,
+   2
+  ],
+  [
+   224,
+   5,
+   8,
+   2
+  ],
+  [
+   221,
+   4,
+   8,
+   2
+  ],
+  [
+   218,
+   3,
+   11,
+   3
+  ],
+  [
+   215,
+   5,
+   7,
+   3
+  ],
+  [
+   209,
+   5,
+   6,
+   4
+  ],
+  [
+   209,
+   4,
+   7,
+   3
+  ],
+  [
+   209,
+   3,
+   10,
+   1
+  ],
+  [
+   207,
+   3,
+   8,
+   1
+  ],
+  [
+   206,
+   4,
+   6,
+   2
+  ],
+  [
+   203,
+   3,
+   7,
+   2
+  ],
+  [
+   197,
+   2,
+   11,
+   1
+  ],
+  [
+   196,
+   5,
+   5,
+   2
+  ],
+  [
+   193,
+   4,
+   5,
+   3
+  ],
+  [
+   189,
+   3,
+   6,
+   2
+  ],
+  [
+   185,
+   6,
+   4,
+   0
+  ],
+  [
+   179,
+   5,
+   4,
+   1
+  ],
+  [
+   177,
+   2,
+   9,
+   2
+  ],
+  [
+   175,
+   4,
+   4,
+   0
+  ],
+  [
+   172,
+   3,
+   5,
+   1
+  ],
+  [
+   165,
+   2,
+   7,
+   0
+  ],
+  [
+   160,
+   3,
+   4,
+   0
+  ],
+  [
+   140,
+   2,
+   6,
+   0
+  ],
+  [
+   124,
+   4,
+   3,
+   1
+  ],
+  [
+   120,
+   2,
+   5,
+   0
+  ],
+  [
+   115,
+   2,
+   4,
+   0
+  ],
+  [
+   115,
+   1,
+   11,
+   0
+  ],
+  [
+   110,
+   1,
+   8,
+   0
+  ],
+  [
+   109,
+   3,
+   3,
+   1
+  ],
+  [
+   105,
+   5,
+   2,
+   0
+  ],
+  [
+   90,
+   4,
+   2,
+   0
+  ],
+  [
+   90,
+   2,
+   3,
+   0
+  ],
+  [
+   75,
+   3,
+   2,
+   0
+  ],
+  [
+   75,
+   1,
+   6,
+   0
+  ],
+  [
+   65,
+   1,
+   4,
+   0
+  ],
+  [
+   55,
+   2,
+   2,
+   0
+  ],
+  [
+   45,
+   1,
+   3,
+   0
+  ],
+  [
+   30,
+   1,
+   2,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0
+  ]
+ ],
+ "compromise": {
+  "profit": 160,
+  "max_projects_per_staff": 3,
+  "max_duration": 4,
+  "n_completed": 6,
+  "completed": [
+   "Job2",
+   "Job3",
+   "Job4",
+   "Job7",
+   "Job9",
+   "Job12"
+  ],
+  "n_late": 0,
+  "total_tardiness": 0,
+  "makespan": 13
+ }
+}
